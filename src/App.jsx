@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { Load } from './services/reservas'
 import { Heading, Box, Image, Flex, Center, Text, Spacer, Tag, Button } from '@chakra-ui/react';
+import { Link } from "react-router-dom";
 
 let count = [];
-
-
 export default function Sillas() {
+    
 
-
-    let seatsAdded = []
+    let seatsAdded = [54,26]
+    
     const [reservas, setReservas] = useState([]);
 
     function add(e, seat) {
@@ -44,12 +44,21 @@ export default function Sillas() {
 
             if (!check) {
                 console.log("Limite maximo de sillas")
+                
             }
 
         }
 
 
-        console.log(seatsAdded)
+        console.log("Lista SeatsAddeds",seatsAdded)
+        aux = seatsAdded.length
+        console.log(aux)
+    }
+
+    let aux = seatsAdded.length
+
+    function getList(){
+        return seatsAdded
     }
 
     useEffect(() => {
@@ -71,6 +80,7 @@ export default function Sillas() {
 
     return (
         <>
+        
 
             <Center>
                 <Heading as="h1" size="4xl" p={5}>
@@ -195,6 +205,14 @@ export default function Sillas() {
                     <button onClick={(e) => add(e, count[49])}>{count[49]}</button>
                 </div>
 
+            </Center>
+
+            <Center>
+                <Link to={`/create/${seatsAdded}`}>
+                <Button>
+                Continuar
+                </Button>
+                </Link>
             </Center>
 
 

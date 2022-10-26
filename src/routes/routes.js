@@ -10,7 +10,9 @@ export default function Rutas() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Sillas />} />
-          <Route path="/create" element={<CrearReserva />} />
+          <Route path="/create/:silla" element={<CrearReserva />} />
+          <Route path="/create/" element={<CrearReserva />} />
+
         </Routes>
       </BrowserRouter>
     );

@@ -1,0 +1,12 @@
+.silla {
+    background-image: url('./1.png');
+    width: 32px;
+    height: 24px;
+    text-align: center;
+    
+    
+}
+
+.row {
+    display: flex;
+}
